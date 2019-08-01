@@ -1,0 +1,21 @@
+{
+  "name": "socket",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --host 0.0.0.0 --port 3000"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "cluster": "^0.7.7",
+    "http": "0.0.0",
+    "socket.io": "^2.2.0",
+    "socket.io-redis": "^5.2.0",
+    "sticky-session": "^1.1.2"
+  }
+}
