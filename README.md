@@ -1,1 +1,1 @@
-# socket
+# socket.io-redis
