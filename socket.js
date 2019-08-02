@@ -9,11 +9,11 @@ const server = http.createServer((req, res) => {
   res.end('worker: ' + cluster.worker.id);
 });
 
+const NODE_PORT = process.env.NODE_PORT || json.redis.port;
 //io.adapter(redis({ host: '192.168.56.53', port: 6379 }));
-//io.adapter(redis({ host: json.redis.host, port: json.redis.port, auth_pass: json.redis.pw }));
-io.adapter(redis({ host: json.redis.host, port: json.redis.port }));
+io.adapter(redis({ host: json.redis.host, port:NODE_PORT, auth_pass: json.redis.pw }));
+//io.adapter(redis({ host: json.redis.host, port: json.redis.port }));
 io.attach(server);
-const NODE_PORT = process.env.NODE_PORT  || 3000;
 isWorker = sticky.listen(server, NODE_PORT);
 
 if (isWorker) {
