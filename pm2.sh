@@ -6,11 +6,12 @@ if [ "$RUN" == "" ]; then
   echo "実行するコマンドを第一変数に入れてください。「start,stop,status,delete,restart」"
   exit 0
 fi
-
 #### 引数の長さが 0 でなければ、
 #### PARAM_1 にそれをセット
 if [ ! -z $2 ]; then
   PORT=$2
+else
+  PORT=8081
 fi
 if [ $PORT -eq 0 ]; then
   echo "PORT番号を第二変数に入れてください。"

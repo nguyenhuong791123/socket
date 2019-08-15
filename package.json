@@ -7,10 +7,13 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "NODE_PORT=8080 node socket.js",
-    "start": "NODE_PORT=8080 pm2 start socket.js --name socker.io-redis-8080"
+    "build": "NODE_PORT=8081 node socket.js",
+    "start": "NODE_PORT=8081 pm2 start socket.js --name socker.io-redis-8080"
   },
-  "dependencies": {},
+  "dependencies": {
+    "date-utils": "^1.2.21",
+    "redis": "^2.8.0"
+  },
   "devDependencies": {
     "cluster": "^0.7.7",
     "http": "0.0.0",
